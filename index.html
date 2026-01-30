@@ -2,65 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Endless Builder Activity Dashboard</title>
+  <title>Endless Builder Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="endless-logo.png" alt="Endless Logo" class="logo" />
-
-    <h1>Endless Builder Activity Dashboard</h1>
-    <p>
-      Track bi-weekly developer contributions, builder levels,
-      and ecosystem impact within Endless.
-    </p>
-  </header>
-
-  <!-- TOP BUILDERS -->
-  <section>
-    <h2>🏆 Top Builders</h2>
-    <div id="builders" class="grid"></div>
-  </section>
-
-  <!-- BI-WEEKLY FLOW -->
-  <section class="card highlight">
-    <h2>🔁 Bi-Weekly Contribution Cycle</h2>
-    <p>
-      Week 1–2 → Submit → Review → Rewards → Builder Level Update
-    </p>
-  </section>
-
-  <!-- BUILDER LEVELS -->
-  <section>
-    <h2>🧱 Builder Levels</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Builder 1.0</h3>
-        <p>New contributor entering the Endless ecosystem.</p>
-      </div>
-      <div class="card">
-        <h3>Builder 2.0</h3>
-        <p>Consistent builder contributing across multiple cycles.</p>
-      </div>
-      <div class="card">
-        <h3>Builder 3.0</h3>
-        <p>Core ecosystem contributor with sustained impact.</p>
-      </div>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <img src="endless-logo.png" class="nav-logo" />
+      <span>Endless Builders</span>
     </div>
-  </section>
+    <div class="nav-right">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('submit')">Submit</button>
+    </div>
+  </nav>
 
-  <!-- WHY -->
-  <section class="card">
-    <h2>💡 Why This Matters</h2>
-    <p>
-      Endless grows through compounding contributions.
-      This dashboard highlights transparency, recognition,
-      and consistency to motivate real builders.
-    </p>
-  </section>
+  <!-- HOME PAGE -->
+  <main id="home" class="page active">
+
+    <header>
+      <h1>Endless Builder Activity Dashboard</h1>
+      <p>
+        Track bi-weekly developer contributions, builder levels,
+        and ecosystem impact within Endless.
+      </p>
+    </header>
+
+    <section>
+      <h2>🏆 Top Builders</h2>
+      <div id="builders" class="grid"></div>
+    </section>
+
+    <section class="card highlight">
+      <h2>🔁 Bi-Weekly Contribution Cycle</h2>
+      <p>Week 1–2 → Submit → Review → Rewards → Builder Level Update</p>
+    </section>
+
+    <section class="card highlight">
+      <h2>🎯 Program Alignment</h2>
+      <ul>
+        <li>✔ Bi-weekly contribution cycles</li>
+        <li>✔ Public builder recognition</li>
+        <li>✔ Ecosystem-focused impact</li>
+        <li>✔ Builder level progression</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧱 Builder Levels</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Builder 1.0</h3>
+          <p>New contributor entering the Endless ecosystem.</p>
+        </div>
+        <div class="card">
+          <h3>Builder 2.0</h3>
+          <p>Consistent builder contributing across multiple cycles.</p>
+        </div>
+        <div class="card">
+          <h3>Builder 3.0</h3>
+          <p>Core ecosystem contributor with sustained impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>💡 Why This Matters</h2>
+      <p>
+        Endless grows through compounding contributions.
+        This dashboard demonstrates transparency,
+        recognition, and consistency for real builders.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- SUBMIT PAGE -->
+  <main id="submit" class="page">
+
+    <header>
+      <h1>Submit Your Contribution</h1>
+      <p>
+        Share your Endless-related work by submitting your
+        GitHub repository and Twitter post.
+      </p>
+    </header>
+
+    <section class="card form-card">
+      <label>
+        GitHub Repository Link
+        <input type="url" id="repo" placeholder="https://github.com/username/repo" />
+      </label>
+
+      <label>
+        Twitter Post Link
+        <input type="url" id="twitter" placeholder="https://x.com/username/status/..." />
+      </label>
+
+      <label>
+        Short Description
+        <textarea id="desc" placeholder="What did you build and why does it matter?"></textarea>
+      </label>
+
+      <button class="submit-btn" onclick="submitForm()">Submit Contribution</button>
+    </section>
+
+  </main>
 
   <footer>
     Built for the Endless Developer Contribution Program
