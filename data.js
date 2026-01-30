@@ -1,12 +1,12 @@
 const builders = [
   {
-    name: "Sabir",
+    name: "Sa1",
     contributions: 14,
     level: "Builder 2.0",
     types: ["Code", "Docs", "Tool"]
   },
   {
-    name: "BuilderX",
+    name: "LiEndless",
     contributions: 9,
     level: "Builder 1.0",
     types: ["Docs"]
